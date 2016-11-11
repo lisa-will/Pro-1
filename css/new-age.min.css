@@ -127,16 +127,19 @@ p {
 	}
 }
 
-/* ADD HO_CO HEADER IMAGE!!! */ 
+
 header {
 	position: relative;
 	width: 100%;
 	min-height: auto;
 	overflow-y: hidden;
-	background: /*url(../img/bg-pattern.png),*/ #7b4397;
-	background: /*url(../img/bg-pattern.png),*/ -webkit-linear-gradient(to left, #7b4397, #dc2430);
-	background: /*url(../img/bg-pattern.png),*/ linear-gradient(to left, #7b4397, #dc2430);
-	color: #fff
+	background-image: url(../img/ho-co.png);
+	background: #7b4397;
+	background: url(../img/ho-co.png),linear-gradient(to left, #7b4397, #dc2430);
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:center;
+	color: #fff;
 }
 header .header-content {
 	text-align: center;
