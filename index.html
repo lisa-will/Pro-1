@@ -27,6 +27,8 @@
     <!-- Theme CSS -->
     <link href="css/new-age.min.css" rel="stylesheet">
 
+    <!-- Firebase --> 
+    <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -40,7 +42,9 @@
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+
+            <!-- BRAND + TOGGLE GROUPED FOR A++ MOBILE DISPLAY -->
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
@@ -48,7 +52,8 @@
                 <a class="navbar-brand page-scroll" href="#page-top">Somewhere Warm</a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- NAV LINKS, FORMS, + OTHER CONTENT FOR TOGGLING! -->
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -73,7 +78,10 @@
         <!-- /.container-fluid -->
         </nav>
 
-        <!-- Login Modal --> 
+        <!-- LOGIN MODAL --> 
+
+ <!-- **** LINK LOG-IN TO member.html--> 
+
         <div class="modal fade" id="loginModal">
         <div class="modal-dialog">
              <div class="modal-content">
@@ -94,13 +102,14 @@
             </div>
             <div class="modal-footer">
                 <a href="#" data-dismiss="modal" class="btn">Close</a>
-            <a href="#" class="btn btn-primary">Log-in</a>
+            <a href="member.html" class="btn btn-primary">Log-in</a>
             </div>
             </div>
         </div>
         </div>
 
-            <!-- Search Modal --> 
+    <!-- ::ROBOT VOICE:: SEARCH MODAL --> 
+
     <div class="modal fade" id="searchModal">
         <div class="modal-dialog">
         <div class="modal-content">
@@ -109,16 +118,23 @@
                     <h4 class="modal-title">Let's Search it!</h4>
             </div>
         <div class="modal-body">
-            <!-- Smokin' Hot --> 
+
+            <!-- SMOKIN' HOT HOT! --> 
+
             <div class="form-group">
                 <label for="hotSearch">How Hot is too Hot?</label>
                 <input class="form-control" id="hotSearch" placeholder="Smokin' Hot!" type="text">
             </div>
-            <!-- Cold As Ice! --> 
+
+            <!-- COLD AS ICE! --> 
+
             <div class="form-group">
             <label for="coldSearch">How Cold is too Cold?</label>
                 <input class="form-control" id="coldSearch" placeholder="Cold as Ice!" type="text">
             </div>
+
+            <!-- SURPRISE ME! CHOOSE RANDOM --> 
+
                 <p class="text-right"><a href="#">- Forgot That! Suprise Me!</a></p>
         </div>
             <div class="modal-footer">
@@ -128,7 +144,7 @@
         </div>
     </div>
     
-    <!-- Find Next Destination --> 
+    <!-- FIND NEXT DESTINTAION--> 
     <header>
     <div class="container">
     <div class="row">
@@ -137,7 +153,7 @@
         <div class="header-content-inner">
             <h1>Do you like it Hot or Cold?</h1>
 
-        <!-- Find Your Next Destination Search Modal! --> 
+        <!-- FIND YOUR NEXT DESTINATION SEARCH MODAL! --> 
         <a href="#searchModal" data-toggle="modal" data-target="#searchModal" class="btn btn-outline btn-xl page-scroll">Find Your Next Destination</a>
 
         </div>
@@ -149,7 +165,8 @@
     </div>
     </header>
 
-    <!-- Map Section --> 
+    <!-- MAP SECTION --> 
+
     <section id="map" class="map">
         <div class="container">
             <div class="row">
@@ -157,39 +174,59 @@
                     <div class="section-heading">
                         <h2>Map It Here!</h2>
                         <hr>
+                        <br>
+                        <br>
                     </div>
                 </div>
             </div>
          </div>
-    </section>
+    
 
-    <!-- Features Section -->         
-    <section id="features" class="features">
+    <!-- WEATHER SECTION -->    
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="section-heading">
-                        <h2>Travel by Temperature</h2>
-                        <p class="text-muted">Create a Photo Journal & Meet fellow travelers!</p>
+                        <h2>Latest Weather Stats</h2>
+                        <p class="text-muted">Are we getting Hot or Cold?</p>
                         <hr>
                     </div>
                 </div>
             </div>
+      </section>      
+
+    <!-- APP SHOWCASE - FEATURES --> 
+    <section id="features" class="features">
             <div class="row">
+            <div class="col-lg-12 text-center">
+                    <div class="section-heading">
+                        <h2>Travel By Temperature</h2>
+                        <p class="text-muted">Explore new places around the world based on your prefered climate, not around a season!<br> Think Traveling for Goldie Locks! And YOU, are Goldie with a hankering for Adventure!</p>
+                        <hr>
+                        <br>
+                        <br>
                 <div class="col-md-4">
                     <div class="device-container">
                         <div class="device-mockup iphone6_plus portrait white">
                             <div class="device">
                                 <div class="screen">
+
                                     <!-- Demo image for screen mockup -->
+
                                     <img src="img/demo-demo.png" class="img-responsive" alt=""> </div>
                                 <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+
+                                    <!-- Hook the "home button" to some JavaScript events or just remove it -->
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- MAP IT: "FIND YOUR PARADISE" -->
+
                 <div class="col-md-8">
                     <div class="container-fluid">
                         <div class="row">
@@ -200,6 +237,9 @@
                                     <p class="text-muted">Search for your next travel destination based on temperature preferences!<br>Regardless of season!</p>
                                 </div>
                             </div>
+
+                            <!-- CAMERA: SNAP HAPPY PHOTO JOURNAL --> 
+
                             <div class="col-md-6">
                                 <div class="feature-item">
                                     <i class="icon-camera text-primary"></i>
@@ -210,6 +250,9 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- GLOBE: STAY CONNECTED, SHARE YOUR TRAVELS -->
+
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="feature-item">
@@ -218,6 +261,9 @@
                                     <p class="text-muted">Share your travels and stay connected with friends, family, and meet fellow temp. travelers!</p>
                                 </div>
                             </div>
+
+                            <!-- PLANE: FLY AWAY WITH LAST MINUTE FLIGHTS! --> 
+
                             <div class="col-md-6">
                                 <div class="feature-item">
                                     <i class="icon-plane text-primary"></i>
@@ -232,14 +278,16 @@
     </section>
     </div>
 
-    <!-- Download Section For Fun -Links lead to nowhere.. just for looks. --> 
+    <!-- DOWNLOAD SECTION FOR FUN. NO, LINKS LEAD TO NOWHERE - THEY ARE JUST FOR LOOKS. ((..FOR NOW)) --> 
+
     <section id="download" class="download bg-primary text-center">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="section-heading"></h2>
-                    <p>The possibilities are needless. Your adventure awaits!<br>
-                    Our app is available on any mobile device! Download now to get started!</p>
+                    <h2 class="section-heading">Where Will Our App<br>Take You?</h2>
+                    <h3>
+                    The possibilities are endless! Your Adventure Awaits!</h3>
+                    <p>Available on any mobile device! Download Now</p>
                     <div class="badges">
                         <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
                         <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
@@ -249,19 +297,20 @@
         </div>
     </section>
 
-    <!-- Find Sweet Travel Steals! --> 
+    <!-- FIND SWEET TRAVEL DEALS! --> 
     
     <section class="cta" id="contact">
         <div class="cta-content">
             <div class="container">
                 <h2>Stop whining.<br>Start <i class="icon-plane text-primary"></i> Traveling!</h2>
-                <a href="#contact" class="btn btn-outline btn-xl page-scroll">Find Sweet Travel Steals NOW!</a>
+                <a href="#contact" class="btn btn-outline btn-xl page-scroll">Find Sweet Travel deals NOW!</a>
             </div>
         </div>
         <div class="overlay"></div>
     </section>
 
-    <!-- Stay Connected Section 
+    <!-- CONNECT WITH US SECTION ???!!! 
+
     <section id="contact" class="contact bg-primary">
         <div class="container">
             <h2>We <i class="fa fa-heart"></i> new friends!</h2>
@@ -281,7 +330,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2016 A Li-Ja-Er-Se Production. All Rights Reserved.</p>
+            <p>&copy; 2016 A Li-Ja-Er-Se UCF CODING BOOTCAMP Production.<br>All Rights Reserved.</p>
             <ul class="list-inline">
                 <li>
                     <a href="#">Privacy</a>
@@ -295,7 +344,7 @@
             </ul>
         </div>
     </footer>
-
+    
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 

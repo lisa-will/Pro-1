@@ -30,6 +30,7 @@
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
+
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -42,19 +43,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                       <a href="#loginModal" data-toggle="modal" data-target="#loginModal">Log-out</a>
+                       <a href="#logoutModal" data-toggle="modal" data-target="#logoutModal">Log-out</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#map">Travel Map</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#features">Features</a>
+                        <a class="page-scroll" href="#features">Weather</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#download">Download</a>
+                        <a class="page-scroll" href="#download">Travel Log</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Share</a>
                     </li>
                 </ul>
             </div>
@@ -63,29 +64,27 @@
         <!-- /.container-fluid -->
         </nav>
 
-        <!-- CREATE LOG OUT SUCCESS - Log Out Modal --> 
+        <!-- LOG-OUT MODAL --> 
+
         <div class="modal fade" id="logoutModal">
-        <div class="modal-dialog">
-             <div class="modal-content">
-                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Log-Out</h4>
-                </div>
-            <div class="modal-body">
-            <div class="form-group">
-                <h3>Are you sure you want to log-out?</h3>
-       
-        <!-- ** yesbtn = confirm log-out!!! -->          
-       	   <div class="modal-footer">
-            	<button id="yesbtn" class="close" data-dismiss="modal" aria-hidden="true">YES</button>  
-                <a href="#" data-dismiss="modal" class="btn">Close</a>
-            <a href="#" class="btn btn-primary">See-Ya!</a>
-            </div>
-            </div>
-        </div>
+        	<div class="modal-dialog">
+             	<div class="modal-content">
+                	<div class="modal-header">
+                    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    	<h4 class="modal-title">Log-Out</h4>
+                	</div>
+            		<div class="modal-body">
+            			<div class="form-group">
+                			<h3>You have successfully logged-out</h3>      
+                		<div class="modal-footer">
+            			<a href="#" data-dismiss="modal" class="btn btn-primary">See-Ya!</a>
+            		</div>
+            	</div>
+        	</div>
         </div>
 
-            <!-- Search Modal --> 
+    <!-- ::ROBOT VOICE:: SEARCH MODAL --> 
+
     <div class="modal fade" id="searchModal">
         <div class="modal-dialog">
         <div class="modal-content">
@@ -94,16 +93,22 @@
                     <h4 class="modal-title">Let's Search it!</h4>
             </div>
         <div class="modal-body">
-            <!-- Smokin' Hot --> 
+
+            <!-- SMOKIN' HOT HOT! -->  
+
             <div class="form-group">
                 <label for="hotSearch">How Hot is too Hot?</label>
                 <input class="form-control" id="hotSearch" placeholder="Smokin' Hot!" type="text">
             </div>
-            <!-- Cold As Ice! --> 
+
+            <!-- COLD AS ICE! --> 
+
             <div class="form-group">
             <label for="coldSearch">How Cold is too Cold?</label>
                 <input class="form-control" id="coldSearch" placeholder="Cold as Ice!" type="text">
             </div>
+
+            <!-- SURPRISE ME! CHOOSE RANDOM --> 
                 <p class="text-right"><a href="#">- Forgot That! Suprise Me!</a></p>
         </div>
             <div class="modal-footer">
@@ -113,17 +118,22 @@
         </div>
     </div>
     
-    <!-- Find Next Destination --> 
+    <!-- WELCOME MEMBER HEADER --> 
+
     <header>
     <div class="container">
     <div class="row">
         <div class="col-sm-7">
         <div class="header-content">
         <div class="header-content-inner">
-            <h1>Do you like it Hot or Cold?</h1>
 
-        <!-- Find Your Next Destination Search Modal! --> 
-        <a href="#searchModal" data-toggle="modal" data-target="#searchModal" class="btn btn-outline btn-xl page-scroll">Find Your Next Destination</a>
+            <h1>Hi Lisa,<br>
+            Where to Next?! 
+            </h1>
+
+        <!-- FIND YOUR NEXT DESTINATION SEARCH MODAL --> 
+
+        <a href="#searchModal" data-toggle="modal" data-target="#searchModal" class="btn btn-outline btn-xl page-scroll">Find Paradise!</a>
 
         </div>
         <div class="col-sm-5">
@@ -134,7 +144,8 @@
     </div>
     </header>
 
-    <!-- Map Section --> 
+    <!-- MAP SECTION --> 
+
     <section id="map" class="map">
         <div class="container">
             <div class="row">
@@ -146,34 +157,21 @@
                 </div>
             </div>
 
- <!-- ** CREATE PHOTO FEED Features Section -->         
+
+ <!-- ** CHANGE TO WEATHER STATS SECTION -->    
+
     <section id="features" class="features">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="section-heading">
-                        <h2>Travel by Temperature</h2>
-                        <p class="text-muted">Create a Photo Journal & Meet fellow travelers!</p>
+                        <h2>Current Weather Stats!</h2>
+                        <p class="text-muted">Based on location your prefered temperature preferences this is what we have found!</p>
                         <hr>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt=""> </div>
-                                <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
+             <div class="col-md-8">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
@@ -213,7 +211,8 @@
     </section>
     </div>
 
-<!-- Find Sweet Travel Steals! --> 
+<!-- FIND SWEET TRAVEL DEALS! --> 
+
     <section class="cta">
         <div class="cta-content">
             <div class="container">
@@ -224,7 +223,7 @@
         <div class="overlay"></div>
     </section>
 
-    <!-- Stay Connected Section -->
+    <!-- CONNECT WITH US SECTION ??!!!  -->
     <section id="contact" class="contact bg-primary">
         <div class="container">
             <h2>We <i class="fa fa-heart"></i> new friends!</h2>
@@ -244,7 +243,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2016 A Li-Ja-Er-Se Production. All Rights Reserved.</p>
+            <p>&copy; 2016 A Li-Ja-Er-Se UCF CODING BOOTCAMP Production.<br>All Rights Reserved.</p>
             <ul class="list-inline">
                 <li>
                     <a href="#">Privacy</a>

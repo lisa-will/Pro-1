@@ -1,3 +1,13 @@
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA_z-zO24oVwxDTJrplArmjUtTqSuiB5Ao",
+    authDomain: "somewhere-warm.firebaseapp.com",
+    databaseURL: "https://somewhere-warm.firebaseio.com",
+    storageBucket: "somewhere-warm.appspot.com",
+    messagingSenderId: "675537655730"
+  };
+  firebase.initializeApp(config);
+
 (function($) {
     "use strict"; // Start of use strict
 
