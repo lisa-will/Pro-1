@@ -27,6 +27,9 @@
     <!-- Theme CSS -->
     <link href="css/new-age.min.css" rel="stylesheet">
 
+    <!-- MAP CSS -->
+    <link rel="stylesheet" type="text/css" href="css/mapstyles.css"></li>
+
     <!-- Firebase --> 
     <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
 
@@ -168,7 +171,7 @@
     </div>
     </header>
 
-    <!-- MAP SECTION --> 
+<!-- MAP SECTION 
 
     <section id="map" class="map">
         <div class="container">
@@ -177,13 +180,24 @@
                     <div class="section-heading">
                         <h2>Map It Here!</h2>
                         <hr>
-                        <br>
-                        <br>
                     </div>
                 </div>
             </div>
-         </div>
+         </div> -->
+
+<!-- PULLED FROM JAVIER --> 
+
+    <div class="map-container">
+    <!-- Google Maps Search Box -->
+    <input id="pac-input" class="controls search-box" type="text" placeholder="Search Box">
+    <!-- Google Maps DIV. Map appears here -->
+    <div id="map" class="map"></div>
+    </div>
+               
+                
          
+     </section>
+
     
 
     <!-- WEATHER SECTION -->    
@@ -360,6 +374,14 @@
 
     <!-- Theme JavaScript -->
     <script src="js/new-age.min.js"></script>
+
+    <!-- GOOGLE MAP API -->
+    <!-- ERROR -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc-_q4KMYWopuYH3oGdv1B6WgedJWcgpU&callback=initMap" async defer></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc-_q4KMYWopuYH3oGdv1B6WgedJWcgpU&libraries=places,visualization&callback=initMap"></script> -->
+
+    <!-- GOOGLE MAP MAIN JS --> 
+    <script type="text/javascript" src="js/main.js"></script>
 
 </body>
 
