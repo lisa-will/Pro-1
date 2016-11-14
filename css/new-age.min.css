@@ -359,6 +359,18 @@ footer p {
 footer ul li a.active, footer ul li a:active, footer ul li a:focus, footer ul li a:hover {
 	text-decoration: none
 }
+
+/*** CHANGE LINEAR-GRADIENT (rgba(34, 34, 34, 0.4), rgba(34, 34, 34, 0.24)) */ 
+
+.weather-primary {
+	background: #fdcc52;
+	background: -webkit-linear-gradient(#fdcc52, #fdc539);
+	background: linear-gradient(#fdcc52, #fdc539);
+}
+.pweather {
+	color: #fff;
+	/*** changed p class="text-muted" (color: #777;) */
+}
 .bg-primary {
 	background: #fdcc52;
 	background: -webkit-linear-gradient(#fdcc52, #fdc539);
