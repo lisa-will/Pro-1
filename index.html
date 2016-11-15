@@ -115,7 +115,7 @@
             </div>
             <div class="modal-footer">
                 <a href="#" data-dismiss="modal" class="btn">Close</a>
-            <a href="member.html" class="btn btn-primary">Log-in</a>
+            <a href="member.html" class="btn btn-primary" id="btnLogin">Log-in</a>
             </div>
             </div>
         </div>
@@ -156,7 +156,7 @@
             </div>
             <div class="modal-footer">
                 <a href="#" data-dismiss="modal" class="btn">Close</a>
-            <a href="member.html" class="btn btn-primary">Sign Me Up!</a>
+            <a href="member.html" class="btn btn-primary" id="btnSignup">Sign Me Up!</a>
             </div>
             </div>
         </div>
@@ -187,9 +187,14 @@
                 <input class="form-control" id="coldSearch" placeholder="Cold as Ice!" type="text">
             </div>
 
-            <!-- SURPRISE ME! CHOOSE RANDOM --> 
+            <!-- SURPRISE ME! CHOOSE RANDOM CHANGED TO BTN *** LINK TO FIND RANDOM LOCATION - CURRENTLY SET UP TO DISMISS MODAL!!! -->
 
-                <p class="text-right"><a href="#">- Forget That! Suprise Me!</a></p>
+            <button class="btn btn-info" class="close" data-dismiss="modal" aria-hidden="true">FORGET THAT! SURPRISE ME!</button>
+                <br>
+                <br>
+
+            <!-- USE THIS TO KEEP AS A LINK: <p class="text-right"><a href="#">- Forget That! Suprise Me!</a></p> --> 
+
         </div>
             <div class="modal-footer">
             <a href="#" class="btn btn-primary">Find Me Paradise</a>
@@ -252,7 +257,7 @@
                         <h2>Latest Weather Stats</h2>
 
     <!-- CHANGED P CLASS = "TEXT-MUTED" (COLOR:#777;) TO P CLASS = PWEATHER --> 
-    
+
                         <p class="pweather">Are we getting Hot or Cold?</p>
                         <hr>
                         <br>
