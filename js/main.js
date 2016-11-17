@@ -8,7 +8,7 @@
   };
   firebase.initializeApp(config);
 
-  // EMAIL/PASSWORD LOGIN VIA FIREBASE
+// EMAIL/PASSWORD LOGIN VIA FIREBASE
 var auth = firebase.auth();
 //auth.signInWithEmailAndPassword(email, pass);
 //auth.createUserWithEmailAndPassword(email, pass);
