@@ -8,6 +8,13 @@
   };
   firebase.initializeApp(config);
 
+//TO-DO: CREATE ON CLICK FUNCTION TO CLOSE SEARCH MODAL AND SCROLL TO WEATHER STATS  
+
+//$('#find_btn').click(function(){
+   // $('#myModal').modal('hide');
+    // $(document.body).scrollTop($('#download').offset().top);
+//});
+
 // EMAIL/PASSWORD LOGIN VIA FIREBASE
 var auth = firebase.auth();
 //auth.signInWithEmailAndPassword(email, pass);
@@ -67,6 +74,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     }
 });
 
+//SEAN'S GET PHOTOS/SEARCH PHOTOS VIA FLICKR
     function getPhotos(textInput) {
       var apiKey = "5164f5b056c40e92395052ab337e2642";
       var tag = textInput;
@@ -85,6 +93,9 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       var textInput = $("#textBox").val();
       getPhotos(textInput);
     });
+
+
+//GOOOOOOGLE MAPS - GEOLATION = THAT'S ALL JAVIER ::THUMBS UP!:: 
 
 //var firebase = new Firebase("https://ucf-project1.firebaseio.com/");
 var database = firebase.database();
