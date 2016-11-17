@@ -8,6 +8,84 @@
   };
   firebase.initializeApp(config);
 
+  // EMAIL/PASSWORD LOGIN VIA FIREBASE
+var auth = firebase.auth();
+//auth.signInWithEmailAndPassword(email, pass);
+//auth.createUserWithEmailAndPassword(email, pass);
+auth.onAuthStateChanged(firebaseUser => {})
+
+var loginEmail = document.getElementById('loginEmail');
+console.log(loginEmail);
+var loginPassword = document.getElementById('loginPassword');
+var btnLogin = document.getElementById('btnLogin');
+var btnSignup = document.getElementById('btnSignup');
+var btnLogOut = document.getElementById('btnLogOut')
+
+//ADD LOGIN EVENT 
+if(btnLogin){
+  btnLogin.addEventListener('click', e => {
+      //GET EMAIL AND PASS
+      var email = loginEmail.val();
+      var pass = loginPassword.val();
+      var auth = firebase.auth();
+      //SIGN IN
+      var promise = auth.signInWithEmailAndPassword(email, pass);
+      promise.catch(e => console.log(e.message));
+
+  });
+}
+
+//SIGN UP EVENT
+if(btnSignup){
+  btnSignup.addEventListener('click', e => {
+      //GET EMAIL AND PASS
+      //TO DO: CHECK FOR REAL EMAILS (#FUTURE GOALS)
+      var email = loginEmail.val();
+      var pass = loginPassword.val();
+      var auth = firebase.auth();
+      //SIGN IN
+      var promise = auth.createUserWithEmailAndPassword(email, pass);
+      promise.catch(e => console.log(e.message));
+
+  });
+}
+
+//LOG OUT EVENT
+if(btnLogOut){
+  btnLogOut.addEventListener('click', e => {
+      firebase.auth().signOut();
+
+  });
+}
+
+//ADD REALTIME LISTENER 
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        console.log(firebaseUser);
+    } else {
+        console.log('not logged in');
+    }
+});
+
+    function getPhotos(textInput) {
+      var apiKey = "5164f5b056c40e92395052ab337e2642";
+      var tag = textInput;
+      var accuracy = "11";
+      var contentType = "1";
+      var perPage = "1"; 
+      var privacyFilter = "1"; 
+      var safeSearch = "1"; 
+      var queryURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + apiKey + "&tags=" + tag + "&accuracy=" + accuracy + "&content_type" + contentType +"&per_page" + perPage + "&safe_search" + safeSearch + "&privacy_filter" + privacyFilter + "&format=json&nojsoncallback=1";
+      $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+        console.log(textInput);
+        console.log(response);
+      })
+    };
+    $("#add").on("click", function() {
+      var textInput = $("#textBox").val();
+      getPhotos(textInput);
+    });
+
 //var firebase = new Firebase("https://ucf-project1.firebaseio.com/");
 var database = firebase.database();
 
@@ -60,13 +138,28 @@ window.onload = function () {
     });
 
     // Content for Firebase Info Window----------------------------------------------
-    var contentString = "<form>Location:<br><input><br><br>"+
+    var contentString = "<form>Add or Update Location Name:<br><br><input type='text' id='nameInput'>"+
+    "<button type='button' data-location='" + locationId + "' id='addName'>Submit</button><br><br>"+
+    "<span>Name: </span><span id='nameInputSpace'> ?</span><br><br>"+ 
     "<button type='button' data-location='" + locationId + "' id='like'>"+
-    "Like +1</button><span id='likeCount'># </span><br><br>"+
-    "<button id='dislike'>"+
-    "Dislike -1</button><span id='dislikeCount'># <span></form><br><br>"+
-    "<button>Weather</button>";
+    "Like +1</button><span> Total Likes: </span><span id='likeCount'> #</span><br><br>"+
+    "<button type='button' data-location='" + locationId + "' id='dislike'>"+
+    "Dislike -1</button><span> Total Dislikes: </span><span id='dislikeCount'> #</span></form>";
+    //"<div class='col-xs-3 col-sm-3 col-md-3 col-lg-3' id ='sidebar'>"+
+    //"<form action='' method='POST' role='form'>"+
+    
+    //"<div class='location-form'>"+
+    //"<label for=''>Aye where you at?</label>"+
+    //"<input type='text' class='form-control' id='location-input' placeholder='Current location'>"+ 
+      //"</div>"+
+        //"<button type='button' class='btn btn-primary' id = 'searchButton'>Submit</button>"+
+        //"<p></p>"+
+        //"<div id='buttonsView'></div>"+
 
+    //"<div class='name'></div>"+
+    //"<div class='wind'></div>"+
+    //"<div class='humidity'></div>"+
+    //"<div class='temp'></div>";
 
 
     // Info Window for Firebase Points-----------------------------------------------
@@ -161,20 +254,111 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
     //To write LIKE count to Firebase************************************************
     //var database = firebase.database(); *This line is a global variable on the top
-    var clickCounter = 0;
+    var clickCounterA = 0;
 
     //Need to call #like button
     $(document).on('click', '#like', function(){
-      clickCounter++;
+      clickCounterA++;
 
       var locationId = $(this).attr("data-location");
 
-    console.log(clickCounter);
+      //console.log for debugging
+      //console.log(clickCounter);
 
-    database.ref(locationId).set({
-    clickCount: clickCounter
+      //.push creates new data, .set replaces data
+      database.ref(locationId).push({
+      clickCountLike: clickCounterA
        });
-      //return false;
+      //return false; //For debugging
     });
     //*******************************************************************************
 
+    //To read Like counts and show on info windows
+    function valueChangedA(snapshot) {
+      //console.log(snapshot.val());
+      //If below I use clickCounterAA the code sort of works, but I should use clickCounterA
+      clickCounterAA = snapshot.val().clickCountLike;
+      $('#likeCount').html(clickCounterA);
+
+    }
+
+    function valueError(err) {
+
+      console.log(err);
+    }
+
+    //'value' is the event
+    database.ref().on('value', valueChangedA, valueError);
+
+
+    //To write DISLIKE count to Firebase************************************************
+    //var database = firebase.database(); *This line is a global variable on the top
+    var clickCounterB = 0;
+
+    //Need to call #like button
+    $(document).on('click', '#dislike', function(){
+      clickCounterB++;
+
+      var locationId = $(this).attr("data-location");
+
+      //console.log for debugging
+      //console.log(clickCounter);
+
+      //.push creates new data, .set replaces data
+      database.ref(locationId).push({
+      clickCountDislike: clickCounterB
+       });
+      //return false; //For debugging
+    });
+    //*******************************************************************************
+
+
+    //To read Dislike counts and show on info windows
+    function valueChangedB(snapshot) {
+      console.log(snapshot.val());
+      //If below I use clickCounterBB the code sort of works, but I should use clickCounterB
+      clickCounterBB = snapshot.val().clickCountDislike;
+      $('#dislikeCount').html(clickCounterB);
+
+    }
+
+    function valueError(err) {
+
+      console.log(err);
+    }
+
+    //'value' is the event
+    database.ref().on('value', valueChangedB, valueError);
+
+
+    //To write NAME input ================================================================
+    var nameA = "";
+
+    $(document).on('click', '#addName' , function(){
+      nameA = $("#nameInput").val().trim();
+    
+    var locationId = $(this).attr("data-location");
+    
+    database.ref(locationId).push({
+    name: nameA
+      });
+
+    });
+  
+  
+    //To read NAME input ==================================================================
+    function valueChangedC(snapshot) {
+      //console.log(snapshot.val());
+      
+      //nameA = snapshot.val().name; *If a enable this line the Name shows up on info window but doesn't show up when I refresh the page
+      $('#nameInputSpace').html(nameA);
+
+    }
+
+    function valueError(err) {
+
+      console.log(err);
+    }
+
+    //'value' is the event
+    database.ref().on('value', valueChangedC, valueError);
